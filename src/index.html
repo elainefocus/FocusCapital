@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Properties on Tube Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="map-wrapper" id="mapWrapper">
+    <div class="image-container">
+      <img src="tube-map.jpg" alt="Tube Map">
+      <div class="triangle" style="top: 0%;left:0%" onclick="toggleTrianglePopup(event, 'trianglePopup1')">
+        <div class="triangle-popup" id="trianglePopup1">
+          <p>This is triangle 1</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup2')">
+        <div class="triangle-popup" id="trianglePopup2">
+          <p>This is triangle 2</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup3')">
+        <div class="triangle-popup" id="trianglePopup3">
+          <p>Triangle 3</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup4')">
+        <div class="triangle-popup" id="trianglePopup4">
+          <p>Triangle 4</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup5')">
+        <div class="triangle-popup" id="trianglePopup5">
+          <p>Triangle 5</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup6')">
+        <div class="triangle-popup" id="trianglePopup6">
+          <p>Triangle 6</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup7')">
+        <div class="triangle-popup" id="trianglePopup7">
+          <p>Triangle 7</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup8')">
+        <div class="triangle-popup" id="trianglePopup8">
+          <p>Triangle 8</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup9')">
+        <div class="triangle-popup" id="trianglePopup9">
+          <p>Triangle 9</p>
+        </div>
+      </div>
+      <div class="triangle" style="top:0%;left:0%;" onclick="toggleTrianglePopup(event, 'trianglePopup10')">
+        <div class="triangle-popup" id="trianglePopup10">
+          <p>Triangle 10</p>
+        </div>
+      </div>
+<!-- 1 -->
+<button class="pin price-orange" style="top:40%;left:57%;" onclick="togglePopup(event,'popupBox1')">
+  <span class="popup" id="popupBox1">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/The Stage.jpg" alt="The Stage">
+      <p>The Stage</p><p>£650,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 2 -->
+<button class="pin price-purple" style="top:53.5%;left:41.5%;" onclick="togglePopup(event,'popupBox2')">
+  <span class="popup" id="popupBox2">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/The Broadway.jpg" alt="The Broadway">
+      <p>The Broadway</p><p>£1,760,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 3 -->
+<button class="pin price-purple" style="top:52.5%;left:40.5%;" onclick="togglePopup(event,'popupBox3')">
+  <span class="popup" id="popupBox3">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/NO.1 Palace Street.jpg" alt="NO.1 Palace Street">
+      <p>NO.1 Palace Street</p><p>£2,550,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 4 -->
+<button class="pin price-purple" style="top:56.5%;left:40.4%;" onclick="togglePopup(event,'popupBox4')">
+  <span class="popup" id="popupBox4">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/The OWO.jpg" alt="The OWO">
+      <p>The OWO</p><p>£1,690,500+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 5 -->
+<button class="pin price-purple" style="top:54%;left:40.7%;" onclick="togglePopup(event,'popupBox5')">
+  <span class="popup" id="popupBox5">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Chimes.jpg" alt="Chimes">
+      <p>Chimes</p><p>£1,800,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 6 -->
+<button class="pin price-blue" style="top:46%;left:43%;" onclick="togglePopup(event,'popupBox6')">
+  <span class="popup" id="popupBox6">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Watch House.jpg" alt="Watch House">
+      <p>Watch House</p><p>£799,995+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 7 -->
+<button class="pin price-purple" style="top:45.5%;left:34.7%;" onclick="togglePopup(event,'popupBox7')">
+  <span class="popup" id="popupBox7">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Elie Saab Residences.jpg" alt="Elie Saab Residences">
+      <p>Elie Saab Residences</p><p>£2,490,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 8 -->
+<button class="pin price-blue" style="top:41.5%;left:48%;" onclick="togglePopup(event,'popupBox8')">
+  <span class="popup" id="popupBox8">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Postmark.jpg" alt="Postmark">
+      <p>Postmark</p><p>£975,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 9 -->
+<button class="pin price-purple" style="top:44%;left:34%;" onclick="togglePopup(event,'popupBox9')">
+  <span class="popup" id="popupBox9">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/The Whiteley.jpg" alt="The Whiteley">
+      <p>The Whiteley</p><p>£1,400,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 10 -->
+<button class="pin price-purple" style="top:42%;left:32%;" onclick="togglePopup(event,'popupBox10')">
+  <span class="popup" id="popupBox10">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/No.18 Porchester Gardens.jpg" alt="No.18 Porchester Gardens">
+      <p>No.18 Porchester Gardens</p><p>£1,740,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 11 -->
+<button class="pin price-purple" style="top:46%;left:36%;" onclick="togglePopup(event,'popupBox11')">
+  <span class="popup" id="popupBox11">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Park Modern.jpg" alt="Park Modern">
+      <p>Park Modern</p><p>£2,150,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 12 -->
+<button class="pin price-purple" style="top:65%;left:36.5%;" onclick="togglePopup(event,'popupBox12')">
+  <span class="popup" id="popupBox12">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/One Clapham.jpg" alt="One Clapham">
+      <p>One Clapham</p><p>£450,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 13 -->
+<button class="pin price-pink" style="top:60.5%;left:34.5%;" onclick="togglePopup(event,'popupBox13')">
+  <span class="popup" id="popupBox13">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Chelsea Creek.jpg" alt="Chelsea Creek">
+      <p>Chelsea Creek</p><p>£750,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 14 -->
+<button class="pin price-pink" style="top:23%;left:39%;" onclick="togglePopup(event,'popupBox14')">
+  <span class="popup" id="popupBox14">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/The Silktream.jpg" alt="The Silktream">
+      <p>The Silktream</p><p>£420,000+</p><p>Zone 3</p>
+    </div>
+  </span>
+</button>
+<!-- 15 -->
+<button class="pin price-blue" style="top:45.7%;left:29.5%;" onclick="togglePopup(event,'popupBox15')">
+  <span class="popup" id="popupBox15">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/White City Living.jpg" alt="White City Living">
+      <p>White City Living</p><p>£665,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 16 -->
+<button class="pin price-purple" style="top:48%;left:57.6%;" onclick="togglePopup(event,'popupBox16')">
+  <span class="popup" id="popupBox16">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/London Dock.jpg" alt="London Dock">
+      <p>London Dock</p><p>£705,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 17 -->
+<button class="pin price-blue" style="top:63.3%;left:40.4%;" onclick="togglePopup(event,'popupBox17')">
+  <span class="popup" id="popupBox17">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Damac Tower.jpg" alt="DAMAC Tower">
+      <p>DAMAC Tower</p><p>£712,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 18 -->
+<button class="pin price-orange" style="top:59.5%;left:33.5%;" onclick="togglePopup(event,'popupBox18')">
+  <span class="popup" id="popupBox18">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/King's Road Park.jpg" alt="King's Road Park">
+      <p>King's Road Park</p><p>£783,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 19 -->
+<button class="pin price-purple" style="top:43%;left:43%;" onclick="togglePopup(event,'popupBox19')">
+  <span class="popup" id="popupBox19">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Tottenham Mews.jpg" alt="Tottenham Mews">
+      <p>Tottenham Mews</p><p>£1,150,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 20 -->
+<button class="pin price-blue" style="top:63.9%;left:41.8%;" onclick="togglePopup(event,'popupBox20')">
+  <span class="popup" id="popupBox20">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Graphite Square.jpg" alt="Graphite Square">
+      <p>Graphite Square</p><p>£820,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 21 -->
+<button class="pin price-orange" style="top:63%;left:38%;" onclick="togglePopup(event,'popupBox21')">
+  <span class="popup" id="popupBox21">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Battersea Power Station.jpg" alt="Battersea Power Station">
+      <p>Battersea Power Station</p><p>£490,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 22 -->
+<button class="pin price-blue" style="top:64%;left:37%;" onclick="togglePopup(event,'popupBox22')">
+  <span class="popup" id="popupBox22">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Prince of Wales Drive.jpg" alt="Prince of Wales Drive">
+      <p>Prince of Wales Drive</p><p>£865,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 23 -->
+<button class="pin price-purple" style="top:45.5%;left:26%;" onclick="togglePopup(event,'popupBox23')">
+  <span class="popup" id="popupBox23">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Royal Gateway.jpg" alt="Royal Gateway">
+      <p>Royal Gateway</p><p>£495,000+</p><p>Zone 2/3</p>
+    </div>
+  </span>
+</button>
+<!-- 24 -->
+<button class="pin price-purple" style="top:62%;left:53%;" onclick="togglePopup(event,'popupBox24')">
+  <span class="popup" id="popupBox24">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Bermondsey.jpg" alt="Bermondsey">
+      <p>Bermondsey</p><p>£545,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 25 -->
+<button class="pin price-blue" style="top:41%;left:42%;" onclick="togglePopup(event,'popupBox25')">
+  <span class="popup" id="popupBox25">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/W1 place.jpg" alt="W1 Place">
+      <p>W1 Place</p><p>£1,591,000+</p><p>Zone 1</p>
+    </div>
+  </span>
+</button>
+<!-- 26 -->
+<button class="pin price-blue" style="top:53.5%;left:63.5%;" onclick="togglePopup(event,'popupBox26')">
+  <span class="popup" id="popupBox26">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/One Thames Quay.jpg" alt="One Thames Quay">
+      <p>One Thames Quay</p><p>£541,000+</p><p>Zone 2</p>
+    </div>
+  </span>
+</button>
+<!-- 27 -->
+<button class="pin price-blue" style="top:25.5%;left:32%;" onclick="togglePopup(event,'popupBox27')">
+  <span class="popup" id="popupBox27">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Fulton &Fifth.jpg" alt="Fulton &Fifth">
+      <p>Fulton &Fifth</p><p>£470,000+</p><p>Zone 4</p>
+    </div>
+  </span>
+</button>
+<!-- 28 -->
+<button class="pin price-orange" style="top:23.6%;left:39.2%;" onclick="togglePopup(event,'popupBox28')">
+  <span class="popup" id="popupBox28">
+    <div class="popup-description">
+      <img src="HTML Work/FC Property/Hendon Waterside.jpg" alt="Hendon Waterside">
+      <p>Hendon Waterside</p><p>£372,000+</p><p>Zone 3</p>
+    </div>
+  </span>
+</button>
+    </div>
+    <div class="zoom-controls">
+      <button id="zoom-in-btn">+</button>
+      <button id="zoom-out-btn">−</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

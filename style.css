@@ -1,0 +1,134 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  overflow: hidden;
+}
+.map-wrapper {
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: cursor 0.15s;
+}
+.map-wrapper.grabbing { cursor: grabbing; }
+.image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  background: #273582;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  color: #273582;
+  transition: transform 0.2s ease;
+  top: 0;
+  left: 0;
+}
+.pin:hover {
+  transform: translate(-50%, -100%) scale(1.4);
+  z-index: 3;
+}
+.pin.price-pink   { background: #FF69B4; color: #FF69B4; }
+.pin.price-orange { background: #FFA500; color: #FFA500; }
+.pin.price-blue   { background: #273582; color: #273582; }
+.pin.price-purple { background: #9400D3; color: #9400D3; }
+.pin::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+.pin::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px 2px 0 2px;
+  border-style: solid;
+  border-color: currentColor transparent transparent transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+.pin.active {
+  transform: translate(-50%, -100%) scale(1.4);
+  z-index: 3;
+}
+.popup, .triangle-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translate(0, -50%);
+  background: #fff;
+  color: #000;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-family: "Adobe Caslon Pro";
+  white-space: normal;
+  width: 95px;
+  z-index: 100;
+}
+.popup.active, .triangle-popup.active {
+  display: block;
+}
+.popup-description img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 14px solid black;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+.zoom-controls {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.zoom-controls button {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease;
+}
+.zoom-controls button:hover {
+  background: #f0f0f0;
+}
