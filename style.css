@@ -26,7 +26,7 @@ html, body {
   z-index: 1;
   width: 10px;
   height: 10px;
-  opacity: 0.7;
+ 
   background: #273582;
   border: none;
   border-radius: 50%;
@@ -42,10 +42,10 @@ html, body {
   transform: translate(-50%, -100%) scale(1.4);
   z-index: 3;
 }
-.pin.price-pink   { background: #FF69B4; color: #FF69B4; }
-.pin.price-orange { background: #FFA500; color: #FFA500; }
-.pin.price-blue   { background: #273582; color: #273582; }
-.pin.price-purple { background: #9400D3; color: #9400D3; }
+.pin.price-pink   { background: rgba(255, 105, 180, 0.7); color: #FF69B4; }
+.pin.price-orange { background: rgba(255, 165,   0, 0.7); color: #FFA500; }
+.pin.price-blue   { background: rgba( 39,  53, 130, 0.7); color: #273582; }
+.pin.price-purple { background: rgba(148,   0, 211, 0.7); color: #9400D3; }
 .pin::before {
   content: "";
   position: absolute;
