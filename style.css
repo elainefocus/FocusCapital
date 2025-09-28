@@ -1,12 +1,65 @@
 html, body {
   margin: 0;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #fafafa;
   overflow: hidden;
 }
+
+/* Container for zoom controls - fixed at top */
+.zoom-controls-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Zoom controls styling */
+.zoom-controls {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-controls button {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-controls button:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.zoom-controls button:active {
+  transform: scale(0.95);
+}
+
+/* Map container - fills the screen */
+.map-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Map wrapper - contains the zoomable content */
 .map-wrapper {
   position: relative;
   cursor: grab;
@@ -14,25 +67,35 @@ html, body {
   touch-action: none;
   transition: cursor 0.15s;
 }
-.map-wrapper.grabbing { cursor: grabbing; }
+
+.map-wrapper.grabbing {
+  cursor: grabbing;
+}
+
+.image-container {
+  position: relative;
+}
+
 .image-container img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
+/* Pin styles */
 .pin {
   position: absolute;
   transform: translate(-50%, -100%);
   z-index: 1;
   width: 10px;
   height: 10px;
-  background: rgba(39, 53, 130, 0.7); /* default semi-transparent blue */
+  background: rgba(39, 53, 130, 0.7);
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
-  color: #273582; /* solid color for arrow & center dot */
+  color: #273582;
   transition: transform 0.2s ease;
   top: 0;
   left: 0;
@@ -62,6 +125,7 @@ html, body {
   transform: translate(-50%, -100%) scale(1.4);
   z-index: 3;
 }
+
 .pin::before {
   content: "";
   position: absolute;
@@ -73,6 +137,7 @@ html, body {
   background: #fff;
   border-radius: 50%;
 }
+
 .pin::after {
   content: "";
   position: absolute;
@@ -84,10 +149,13 @@ html, body {
   border-color: currentColor transparent transparent transparent;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
 }
+
 .pin.active {
   transform: translate(-50%, -100%) scale(1.4);
   z-index: 3;
 }
+
+/* Popup styles */
 .popup {
   display: none;
   position: absolute;
@@ -97,7 +165,7 @@ html, body {
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   font-size: 14px;
-  font-family: "Adobe Caslon Pro";
+  font-family: "Adobe Caslon Pro", serif;
   white-space: normal;
   width: 200px;
   z-index: 100;
@@ -105,6 +173,44 @@ html, body {
   left: 130%;
   transform: translateY(-50%);
 }
+
+.popup.active {
+  display: block;
+}
+
+.popup-description img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.popup-description p {
+  margin: 5px 0;
+}
+
+/* Triangle styles */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 14px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  transition: border-top-color 0.2s ease;
+}
+
+.triangle:hover {
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+.triangle.active {
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Triangle popup styles */
 .triangle-popup {
   display: none;
   position: absolute;
@@ -117,56 +223,23 @@ html, body {
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
   font-size: 14px;
-  font-family: "Adobe Caslon Pro";
+  font-family: "Adobe Caslon Pro", serif;
   white-space: normal;
   width: 200px;
   z-index: 100;
-  margin-left: 10px; /* spacing from triangle */
+  margin-left: 10px;
 }
+
 .triangle-popup.active {
   display: block;
 }
 
-.popup.active {
-  display: block;
-}
-.popup-description img {
+.triangle-popup img {
   width: 100%;
   border-radius: 5px;
   margin-bottom: 8px;
 }
-.triangle {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 14px solid rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  top: 0;
-  left: 0;
-}
-.zoom-controls {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.zoom-controls button {
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  font-weight: bold;
-  background: #fff;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: background 0.2s ease;
-}
-.zoom-controls button:hover {
-  background: #f0f0f0;
+
+.triangle-popup p {
+  margin: 5px 0;
 }
