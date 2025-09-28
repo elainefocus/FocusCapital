@@ -8,11 +8,12 @@ html, body {
 /* Container for zoom controls - fixed at top */
 .zoom-controls-container {
   position: fixed;
-  top: 20px;      
-  left: 50%;
+  top: 20px;          
+  left: 50%; 
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 2000;
 }
+
 
 /* Zoom controls styling */
 .zoom-controls {
